@@ -42,7 +42,6 @@ function submitClaim(event) {
         return;
     }
 
-    // Get the claim data
     const claimData = {
         claimNumber: claimNumberElement.value,
         claimSignature: claimSignatureElement.value,
@@ -79,14 +78,12 @@ function submitClaim(event) {
 }
 
 
-// Function to add submit event listener for the form
 function addSubmitEventListener() {
-    // Ensure the form exists after showing it
     const finalSubmitForm = document.getElementById('finalSubmitForm');
     
     if (finalSubmitForm) {
         finalSubmitForm.addEventListener('submit', function(event) {
-            submitClaim(event);  // Pass the event to submitClaim function
+            submitClaim(event);  
         });
     } else {
         console.error("Form element with ID 'finalSubmitForm' not found.");
@@ -94,11 +91,10 @@ function addSubmitEventListener() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Ensure that form submission listener is only added once the document is fully loaded
     const finalSubmitForm = document.getElementById('finalSubmitForm');
     if (finalSubmitForm) {
         finalSubmitForm.addEventListener('submit', function(event) {
-            submitClaim(event);  // Pass the event to submitClaim function
+            submitClaim(event); 
         });
     }
 });
