@@ -7,7 +7,11 @@ from services.validation import BlockValidator
 app = Flask(__name__)
 CORS(app)
 
+<<<<<<< HEAD
 storage_file = 'blockchain.json'  
+=======
+storage_file = 'blockchain.json' 
+>>>>>>> 50a1e1be7b60a70fe92d62205d01df4e30314987
 blockchain = BlockchainWithStorage(storage_file=storage_file, difficulty=4)
 
 digital_signature_service = DigitalSignature()
