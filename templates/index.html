@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Signature Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Digital Signature</h1>
+
+        <p id="claimNumberDisplay">Claim Number: Not generated yet</p>
+
+        <form onsubmit="event.preventDefault(); generateSignature();">
+            <div>
+                <label for="claimerName">Your Name:</label>
+                <input type="text" id="claimerName" required>
+            </div>
+            <div>
+                <label for="claimDetails">Claim Details:</label>
+                <textarea id="claimDetails" required></textarea>
+            </div>
+            <button type="button" onclick="generateSignature()">Generate Signature</button>
+        </form>
+
+        <p id="digitalSignature"></p>
+    </div>
+
+    <script src="/static/scripts/signatureGenerator.js"></script>
+</body>
+</html>

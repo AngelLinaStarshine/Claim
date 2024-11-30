@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Claim</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Claim</h1>
+
+
+        <!-- Form for submitting claim -->
+        <form id="verifyForm" onsubmit="event.preventDefault(); verifySignature();">
+            <label for="claimSignature">Enter Digital Signature:</label>
+            <input type="text" id="claimSignature" required>
+            <button type="submit">Verify Signature</button>
+        </form>
+        
+        <div id="claimDetailsSection" style="display: none;">
+            <h2>Claim Details</h2>
+            <p><strong>Claim Number:</strong> <span id="claimNumberDisplay">{{ claim_number }}</span></p>
+            <p><strong>Claim Details:</strong> <span id="claimDetailsDisplay">{{ claim_details }}</span></p>
+        
+            <form id="finalSubmitForm">
+                <button type="submit">Submit Claim</button>
+            </form>
+        </div>
+     
+    </div>
+
+    <script src="/static/scripts/claimSubmit.js"></script>
+</body>
+</html>
